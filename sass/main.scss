@@ -1,0 +1,178 @@
+@import "helpers/functions", "helpers/vars", "helpers/mixins", "helpers/reset";
+
+section {
+  &:nth-child(odd) {
+    background-image: url("./imgs/noise.png");
+    // padding: $md;
+  }
+  .parent {
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 100vh;
+    & > .title {
+      padding-top: $md;
+    }
+  }
+}
+
+// .title {
+//   text-align: center;
+//   font-size: $md;
+// }
+
+.highlight {
+  color: $alt-bg;
+  // font-weight: 700;
+}
+// * {
+//   border: 2px solid $alt-bg;
+// }
+.first-main {
+  @include flex(space-between, stretch, column);
+  header {
+    // @include box-shadow(2px, 0);
+    @include flex(space-between, center);
+    // display: flex;
+    .title {
+      font-size: $md-font;
+      padding: $sm;
+    }
+    .navList {
+      // padding: $sm;
+      @include flex(space-between, center);
+      gap: $md;
+      & .navLink {
+        // height: 100%;
+        font-size: 1.2em;
+        padding: $sm;
+        @include link;
+        // &:hover {
+        //   // background-color: $alt-bg;
+        //   // border-bottom: 4px solid $alt-bg;
+        // }
+      }
+    }
+  }
+  .aboutMe-wrapper {
+    margin-bottom: $lg * 2;
+    @include flex(space-between, stretch);
+    gap: $md;
+    & .mainImg-box {
+      flex: 2;
+    }
+    & .aboutMe-description {
+      @include flex(space-evenly, center, column); //might delete later
+      flex: 3;
+      // border: 2px solid red;
+      & .profileImg-box {
+        // border: 2px solid black;
+        @include icon;
+        margin: 0 auto;
+        border: 2px solid $alt-bg;
+        border-radius: $radius;
+      }
+      & .aboutMe-text {
+        height: 100%;
+        @include flex(space-evenly, stretch, column);
+        .title {
+          font-size: $lg-font;
+          line-height: 1.2;
+        }
+        .details {
+          font-size: 1.5em;
+          margin-top: $md;
+          max-width: 80%;
+        }
+      }
+      .main-btns {
+        // border: 2px solid red;
+        @include flex(center, center);
+        align-self: flex-start;
+        gap: 2rem;
+        .btn {
+          @include btn(10rem, 4rem);
+        }
+      }
+    }
+  }
+}
+#skills {
+  // max-height: fit-content;
+  .second-main {
+    // @include flex(space-around, stretch, column);
+    .title {
+      font-size: $lg-font;
+      margin-bottom: $lg * 2;
+      text-align: center;
+    }
+    .skills-wrapper {
+      & .skills {
+        @include grid;
+        gap: $lg;
+        & .skill {
+          @include flex(space-evenly, center, column);
+          transition: $transition-time;
+          text-align: center;
+          & .skillImg-box {
+            @include icon;
+            & .skillImg {
+              max-height: $icon;
+              transition: $transition-time;
+            }
+          }
+          & .skillTitle {
+            opacity: 0;
+            font-size: 0.8rem;
+            // margin-top: $md;
+            transition: all $transition-time 0.2s ease;
+          }
+          &:hover {
+            @include box-shadow(2px, 2px);
+            border-radius: $radius;
+            .skillTitle {
+              font-size: 1.4rem;
+              opacity: 1;
+            }
+            .skillImg {
+              scale: 0.7;
+              opacity: 0.6;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  .parent {
+    font-size: 1.1em;
+    // line-height: 2.6;
+    min-height: 30vh;
+    & .footerContent {
+      padding: $lg $sm;
+      // border: 2px solid red;
+      @include flex(space-evenly, center);
+      // gap: $lg * 4;
+      .column {
+        // border: 2px solid red;
+        // text-align: center;
+        p {
+          line-height: 1.9;
+        }
+      }
+      .footerLinks {
+        // height: 20vh;
+        @include flex(space-evenly, center, column);
+      }
+      .link {
+        // border: 2px solid red;
+        padding: $sm / 2;
+        @include bottomBorderAnimation;
+        // &:hover {
+        //   opacity: 0.7;
+        // }
+      }
+    }
+  }
+}

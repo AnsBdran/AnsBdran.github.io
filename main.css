@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Monda", sans-serif;
+  background-color: #625fbf;
+  color: #e7f0f7;
+}
+
+p {
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section:nth-child(odd) {
+  background-image: url("./imgs/noise.png");
+}
+section .parent {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+}
+section .parent > .title {
+  padding-top: 1.8rem;
+}
+
+.highlight {
+  color: #592a9b;
+}
+
+.first-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.first-main header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.first-main header .title {
+  font-size: 1.8em;
+  padding: 0.8rem;
+}
+.first-main header .navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.8rem;
+}
+.first-main header .navList .navLink {
+  font-size: 1.2em;
+  padding: 0.8rem;
+  position: relative;
+}
+.first-main header .navList .navLink::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #592a9b;
+  transition: 0.8s ease;
+}
+.first-main header .navList .navLink:hover::after {
+  width: 100%;
+}
+.first-main .aboutMe-wrapper {
+  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1.8rem;
+}
+.first-main .aboutMe-wrapper .mainImg-box {
+  flex: 2;
+}
+.first-main .aboutMe-wrapper .aboutMe-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 3;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .profileImg-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border: 2px solid #592a9b;
+  border-radius: 0.4rem;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .aboutMe-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .aboutMe-text .title {
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .aboutMe-text .details {
+  font-size: 1.5em;
+  margin-top: 1.8rem;
+  max-width: 80%;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .main-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  gap: 2rem;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .main-btns .btn {
+  width: 10rem;
+  height: 4rem;
+  background-color: #592a9b;
+  border-radius: 0.4rem;
+  font-size: 1.2em;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: All 0.4s;
+  border: 6px solid #592a9b;
+}
+.first-main .aboutMe-wrapper .aboutMe-description .main-btns .btn:hover {
+  background: none;
+  font-size: 1.3rem;
+}
+
+#skills .second-main .title {
+  font-size: 2.5em;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+#skills .second-main .skills-wrapper .skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-rows: repeat(3, 180px);
+  align-content: center;
+  gap: 3rem;
+}
+#skills .second-main .skills-wrapper .skills .skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.8s;
+  text-align: center;
+}
+#skills .second-main .skills-wrapper .skills .skill .skillImg-box {
+  width: 100px;
+  height: 100px;
+}
+#skills .second-main .skills-wrapper .skills .skill .skillImg-box .skillImg {
+  max-height: 100px;
+  transition: 0.8s;
+}
+#skills .second-main .skills-wrapper .skills .skill .skillTitle {
+  opacity: 0;
+  font-size: 0.8rem;
+  transition: all 0.8s 0.2s ease;
+}
+#skills .second-main .skills-wrapper .skills .skill:hover {
+  box-shadow: 2px 2px 15px #592a9b;
+  border-radius: 0.4rem;
+}
+#skills .second-main .skills-wrapper .skills .skill:hover .skillTitle {
+  font-size: 1.4rem;
+  opacity: 1;
+}
+#skills .second-main .skills-wrapper .skills .skill:hover .skillImg {
+  scale: 0.7;
+  opacity: 0.6;
+}
+
+#footer .parent {
+  font-size: 1.1em;
+  min-height: 30vh;
+}
+#footer .parent .footerContent {
+  padding: 3rem 0.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#footer .parent .footerContent .column p {
+  line-height: 1.9;
+}
+#footer .parent .footerContent .footerLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#footer .parent .footerContent .link {
+  padding: 0.4rem;
+  position: relative;
+}
+#footer .parent .footerContent .link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #592a9b;
+  transition: 0.8s ease;
+}
+#footer .parent .footerContent .link:hover::after {
+  width: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */
