@@ -61,17 +61,17 @@
   // @include bottomBorderAnimation;
 }
 
-@mixin link {
-  @include bottomBorderAnimation;
-}
+// @mixin link($val) {
+//   // @include bottomBorderAnimation;
+// }
 
-@mixin bottomBorderAnimation {
+@mixin bottomBorderAnimation($width) {
   position: relative;
   &::after {
     content: "";
     position: absolute;
     width: 0%;
-    height: 5px;
+    height: $width;
     bottom: 0;
     left: 0;
     background-color: $alt-bg;
